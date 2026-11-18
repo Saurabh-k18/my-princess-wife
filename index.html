@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy National Princess Day, Bayko! 👑</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cinzel Decorative, Cormorant Garamond, Plus Jakarta Sans, & Great Vibes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Canvas Confetti for celebratory royal sparkles -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Custom Tailwind Configuration for Royal Pastel Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FFFDFB',
+                            100: '#FDF8F5',
+                            200: '#F8EFEA',
+                        },
+                        blush: {
+                            50: '#FFF5F7',
+                            100: '#FCE7EC',
+                            200: '#F9D0DB',
+                            300: '#F4AFC2',
+                            400: '#EB82A0',
+                            500: '#DF5880',
+                        },
+                        gold: {
+                            100: '#FBF5E6',
+                            200: '#F3E3B8',
+                            300: '#E6C982',
+                            400: '#D4AF37',
+                            500: '#B89225',
+                            600: '#927119',
+                        },
+                        plum: {
+                            800: '#4A2C38',
+                            900: '#351D27',
+                        }
+                    },
+                    fontFamily: {
+                        royal: ['"Cinzel Decorative"', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                    },
+                    boxShadow: {
+                        'storybook': '0 12px 35px -10px rgba(184, 146, 37, 0.16), 0 4px 15px -3px rgba(223, 88, 128, 0.08)',
+                        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.35)',
+                        'polaroid': '0 10px 25px rgba(74, 44, 56, 0.12)',
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 7s ease-in-out 2s infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(3deg)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.04)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans antialiased selection:bg-blush-200 selection:text-plum-900 relative min-h-screen pb-24">
+
+    <!-- Ambient Interactive Floating Crowns & Sparkles Container -->
+    <div id="floating-layer" aria-hidden="true"></div>
+
+    <!-- Top Sticky Mini Royal Navigation / Sparkle Trigger -->
+    <header
+        class="sticky top-0 z-30 bg-cream-50/85 backdrop-blur-md border-b border-gold-200/70 px-4 py-3 transition-all">
+        <div class="max-w-lg mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-xl animate-pulse-soft">👑</span>
+                <div>
+                    <p class="font-royal text-xs tracking-widest text-gold-600 uppercase">Nov 18 • Princess Day</p>
+                    <p class="font-serif italic text-sm font-semibold text-plum-900 leading-none">For My Bayko, Darshika
+                    </p>
+                </div>
+            </div>
+            <button id="magic-wand-btn" type="button"
+                class="flex items-center gap-1.5 bg-gradient-to-r from-blush-100 to-gold-100 hover:from-blush-200 hover:to-gold-200 active:scale-95 text-plum-900 border border-gold-300/80 px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-sm transition-all">
+                <span>✨</span>
+                <span>Sprinkle Magic</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Storybook Container -->
+    <main class="max-w-lg mx-auto px-4 pt-6 space-y-12 relative z-10">
+
+        <!-- =========================================================
+             1. ROYAL STORYBOOK COVER / HERO SECTION
+        ========================================================== -->
+        <section
+            class="relative bg-cream-50 rounded-3xl p-6 sm:p-8 border-2 border-gold-300/80 shadow-storybook text-center overflow-hidden">
+            <!-- Decorative Corner Flourishes -->
+            <div class="absolute top-3 left-3 text-gold-400/70 text-lg select-none">❧</div>
+            <div class="absolute top-3 right-3 text-gold-400/70 text-lg select-none transform scale-x-[-1]">❧</div>
+            <div class="absolute bottom-3 left-3 text-gold-400/70 text-lg select-none transform scale-y-[-1]">❧</div>
+            <div class="absolute bottom-3 right-3 text-gold-400/70 text-lg select-none transform scale-[-1]">❧</div>
+
+            <!-- Inner Gold Hairline Border -->
+            <div
+                class="border border-gold-200/90 rounded-2xl p-5 sm:p-6 bg-gradient-to-b from-blush-50/60 via-cream-50 to-gold-100/40">
+
+                <!-- Date Ribbon -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blush-100/90 border border-blush-300/60 text-blush-500 text-xs font-semibold tracking-wider uppercase mb-4 shadow-xs">
+                    <span>✨</span>
+                    <span>November 18 • National Princess Day</span>
+                    <span>✨</span>
+                </div>
+
+                <!-- Animated Crown Emblem -->
+                <div class="my-3 flex justify-center">
+                    <div id="hero-crown"
+                        class="w-20 h-20 rounded-full bg-gradient-to-tr from-gold-200 via-cream-50 to-blush-100 border-2 border-gold-400 shadow-gold-glow flex items-center justify-center animate-float-slow cursor-pointer active:scale-90 transition-transform"
+                        title="Tap the Royal Crown!">
+                        <svg class="w-11 h-11 text-gold-500 drop-shadow-xs" viewBox="0 0 64 64" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 46L6 20L21 31L32 12L43 31L58 20L54 46H10Z" fill="url(#crownGrad)"
+                                stroke="#927119" stroke-width="2.5" stroke-linejoin="round" />
+                            <rect x="10" y="46" width="44" height="6" rx="3" fill="#D4AF37" stroke="#927119"
+                                stroke-width="2" />
+                            <circle cx="32" cy="9" r="3" fill="#DF5880" />
+                            <circle cx="6" cy="17" r="2.5" fill="#DF5880" />
+                            <circle cx="58" cy="17" r="2.5" fill="#DF5880" />
+                            <circle cx="32" cy="36" r="3.5" fill="#FFF5F7" stroke="#927119" stroke-width="1.5" />
+                            <circle cx="20" cy="38" r="2" fill="#DF5880" />
+                            <circle cx="44" cy="38" r="2" fill="#DF5880" />
+                            <defs>
+                                <linearGradient id="crownGrad" x1="6" y1="12" x2="58" y2="46"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FBF5E6" />
+                                    <stop offset="0.5" stop-color="#E6C982" />
+                                    <stop offset="1" stop-color="#D4AF37" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-royal text-2xl sm:text-3xl font-black tracking-wide gold-foil-text leading-snug mt-2">
+                    Happy Princess Day, To<br>Mahji Darshika
+                </h1>
+
+                <p class="font-script text-3xl sm:text-4xl text-blush-500 mt-1 mb-4">
+                    ~ Mahji chotu si pari ~
+                </p>
+
+                <!-- Heartfelt Opening Verse -->
+                <p class="font-serif text-lg sm:text-xl text-plum-800 leading-relaxed italic max-w-md mx-auto">
+                    “Every fairy tale has a princess, and mine came true the day you walked into my life. Today the
+                    whole world celebrates princesses, yet I get to love the most prettiest, warmest, and most magical
+                    one every single day.”
+                </p>
+
+                <!-- Quick Jump Pills -->
+                <div class="mt-6 pt-5 border-t border-gold-200/70 flex flex-wrap justify-center gap-2">
+                    <a href="#love-envelopes"
+                        class="px-3.5 py-2 rounded-full bg-cream-50 hover:bg-blush-50 text-plum-900 border border-blush-200 text-xs font-semibold shadow-2xs transition-all">
+                        💌 Secret Notes
+                    </a>
+                    <a href="#princess-deck"
+                        class="px-3.5 py-2 rounded-full bg-cream-50 hover:bg-blush-50 text-plum-900 border border-blush-200 text-xs font-semibold shadow-2xs transition-all">
+                        🃏 Why You're Royalty
+                    </a>
+                    <a href="#royal-vouchers"
+                        class="px-3.5 py-2 rounded-full bg-cream-50 hover:bg-blush-50 text-plum-900 border border-blush-200 text-xs font-semibold shadow-2xs transition-all">
+                        🎟️ Royal Treats
+                    </a>
+                    <a href="#royal-decree"
+                        class="px-3.5 py-2 rounded-full bg-cream-50 hover:bg-blush-50 text-plum-900 border border-blush-200 text-xs font-semibold shadow-2xs transition-all">
+                        📜 Royal Decree
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             2. INTERACTIVE LOVE-NOTE ENVELOPES (TAP TO OPEN)
+        ========================================================== -->
+        <section id="love-envelopes" class="space-y-4 pt-2">
+            <div class="text-center space-y-1">
+                <span class="text-xs font-bold tracking-widest uppercase text-gold-600">Chapter I • Sealed With
+                    Love</span>
+                <h2 class="font-royal text-xl sm:text-2xl text-plum-900">Royal Love Letters</h2>
+                <p class="font-serif italic text-base text-plum-800/80">Tap a wax-sealed envelope to break the seal &
+                    read inside</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Envelope 1 -->
+                <button type="button" onclick="openEnvelope(0)"
+                    class="group relative bg-cream-50 hover:bg-blush-50/70 rounded-2xl p-5 border border-gold-300/80 shadow-storybook text-center transition-all duration-300 hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-between min-h-[168px]">
+                    <div class="washi-tape w-16 h-4 -mt-7 mb-2 rounded-xs transform -rotate-2"></div>
+                    <div class="text-xs font-semibold uppercase tracking-wider text-blush-500">Letter No. 01</div>
+                    <h3 class="font-serif font-bold text-lg text-plum-900 mt-1">When You Smile</h3>
+                    <div id="seal-0"
+                        class="my-3 w-12 h-12 rounded-full bg-gradient-to-br from-blush-400 to-blush-500 border-2 border-gold-300 shadow-md flex items-center justify-center text-cream-50 group-hover:scale-110 transition-transform">
+                        <span class="font-royal text-sm font-bold">D♥S</span>
+                    </div>
+                    <span id="status-0"
+                        class="text-[11px] font-medium text-gold-600 bg-gold-100/80 px-3 py-0.5 rounded-full">Tap to
+                        unseal ✨</span>
+                </button>
+
+                <!-- Envelope 2 -->
+                <button type="button" onclick="openEnvelope(1)"
+                    class="group relative bg-cream-50 hover:bg-blush-50/70 rounded-2xl p-5 border border-gold-300/80 shadow-storybook text-center transition-all duration-300 hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-between min-h-[168px]">
+                    <div class="washi-tape-gold w-16 h-4 -mt-7 mb-2 rounded-xs transform rotate-2"></div>
+                    <div class="text-xs font-semibold uppercase tracking-wider text-blush-500">Letter No. 02</div>
+                    <h3 class="font-serif font-bold text-lg text-plum-900 mt-1">My Safe Haven</h3>
+                    <div id="seal-1"
+                        class="my-3 w-12 h-12 rounded-full bg-gradient-to-br from-gold-400 to-gold-500 border-2 border-cream-100 shadow-md flex items-center justify-center text-cream-50 group-hover:scale-110 transition-transform">
+                        <span class="text-base">👑</span>
+                    </div>
+                    <span id="status-1"
+                        class="text-[11px] font-medium text-gold-600 bg-gold-100/80 px-3 py-0.5 rounded-full">Tap to
+                        unseal ✨</span>
+                </button>
+
+                <!-- Envelope 3 -->
+                <button type="button" onclick="openEnvelope(2)"
+                    class="group relative bg-cream-50 hover:bg-blush-50/70 rounded-2xl p-5 border border-gold-300/80 shadow-storybook text-center transition-all duration-300 hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-between min-h-[168px]">
+                    <div class="washi-tape w-16 h-4 -mt-7 mb-2 rounded-xs transform -rotate-1"></div>
+                    <div class="text-xs font-semibold uppercase tracking-wider text-blush-500">Letter No. 03</div>
+                    <h3 class="font-serif font-bold text-lg text-plum-900 mt-1">My Promise to Bayko</h3>
+                    <div id="seal-2"
+                        class="my-3 w-12 h-12 rounded-full bg-gradient-to-br from-blush-400 to-blush-500 border-2 border-gold-300 shadow-md flex items-center justify-center text-cream-50 group-hover:scale-110 transition-transform">
+                        <span class="text-base">💌</span>
+                    </div>
+                    <span id="status-2"
+                        class="text-[11px] font-medium text-gold-600 bg-gold-100/80 px-3 py-0.5 rounded-full">Tap to
+                        unseal ✨</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3. "REASONS YOU'RE MY PRINCESS" INTERACTIVE CARD DECK
+        ========================================================== -->
+        <section id="princess-deck" class="space-y-4 pt-2">
+            <div class="text-center space-y-1">
+                <span class="text-xs font-bold tracking-widest uppercase text-gold-600">Chapter II • Royal Deck</span>
+                <h2 class="font-royal text-xl sm:text-2xl text-plum-900">Reasons You're My Princess</h2>
+                <p class="font-serif italic text-base text-plum-800/80">Tap the card or use arrows to flip through your
+                    royal traits</p>
+            </div>
+
+            <!-- Interactive Stacked Card Container -->
+            <div class="relative max-w-md mx-auto pt-2 pb-4 px-2">
+                <div
+                    class="absolute inset-x-6 top-4 bottom-2 bg-blush-100/80 rounded-3xl border border-blush-200 transform -rotate-3 transition-transform">
+                </div>
+                <div
+                    class="absolute inset-x-5 top-3 bottom-3 bg-gold-100/90 rounded-3xl border border-gold-200 transform rotate-2 transition-transform">
+                </div>
+
+                <!-- Active Interactive Card -->
+                <div id="reason-card" onclick="nextReasonCard()"
+                    class="relative bg-cream-50 rounded-3xl p-6 sm:p-8 border-2 border-gold-300 shadow-storybook cursor-pointer select-none transition-all duration-300 active:scale-[0.98] min-h-[250px] flex flex-col justify-between">
+
+                    <!-- Top Card Meta -->
+                    <div class="flex items-center justify-between border-b border-gold-200/60 pb-3">
+                        <span id="card-counter" class="text-xs font-bold tracking-widest uppercase text-gold-600">Card
+                            01 / 07</span>
+                        <span id="card-emoji" class="text-2xl">🌸</span>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="my-auto py-4 text-center space-y-2.5 transition-opacity duration-200" id="card-body">
+                        <h3 id="card-title" class="font-serif font-bold text-2xl text-plum-900">Your Effortless Grace
+                        </h3>
+                        <p id="card-text" class="font-serif italic text-lg text-plum-800 leading-relaxed">
+                            “You don’t need a tiara to look royal. Bayko. The kindness in your eyes and the warmth in
+                            your voice make every room brighter.”
+                        </p>
+                    </div>
+
+                    <!-- Card Footer Hint -->
+                    <div
+                        class="flex items-center justify-between pt-3 border-t border-gold-200/60 text-xs text-plum-800/70">
+                        <span class="font-script text-xl text-blush-500">Bayko Edition</span>
+                        <span class="font-medium text-gold-600">Tap card for next →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Controls -->
+            <div class="flex items-center justify-center gap-4">
+                <button type="button" onclick="prevReasonCard()"
+                    class="p-3 rounded-full bg-cream-50 hover:bg-blush-50 border border-gold-300 text-plum-900 shadow-xs active:scale-90 transition-all"
+                    aria-label="Previous Reason">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <div id="deck-dots" class="flex items-center gap-1.5">
+                    <!-- Dots injected by JS -->
+                </div>
+
+                <button type="button" onclick="nextReasonCard()"
+                    class="p-3 rounded-full bg-cream-50 hover:bg-blush-50 border border-gold-300 text-plum-900 shadow-xs active:scale-90 transition-all"
+                    aria-label="Next Reason">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             4. ROYAL WISH-LIST / REDEEMABLE VOUCHER SECTION
+        ========================================================== -->
+        <section id="royal-vouchers" class="space-y-4 pt-2">
+            <div class="text-center space-y-1">
+                <span class="text-xs font-bold tracking-widest uppercase text-gold-600">Chapter III • Royal
+                    Privileges</span>
+                <h2 class="font-royal text-xl sm:text-2xl text-plum-900">Bayko's Royal Vouchers</h2>
+                <p class="font-serif italic text-base text-plum-800/80">Tap any treat below to redeem immediately—signed
+                    & owed by Laddoo!</p>
+            </div>
+
+            <div id="voucher-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Vouchers dynamically rendered so state persists smoothly -->
+            </div>
+        </section>
+
+        <!-- =========================================================
+             5. FINALIZED ROYAL DECREE / CERTIFICATE
+        ========================================================== -->
+        <section id="royal-decree" class="space-y-4 pt-2">
+            <div class="text-center space-y-1">
+                <span class="text-xs font-bold tracking-widest uppercase text-gold-600">Chapter IV • Official
+                    Proclamation</span>
+                <h2 class="font-royal text-xl sm:text-2xl text-plum-900">The Royal Decree</h2>
+            </div>
+
+            <!-- Official Parchment Certificate Card -->
+            <div id="certificate-card"
+                class="relative bg-gradient-to-b from-cream-50 via-gold-100/50 to-blush-50/60 rounded-3xl p-3 sm:p-4 border-2 border-gold-400 shadow-storybook">
+                <div
+                    class="border-2 border-double border-gold-400/90 rounded-2xl p-5 sm:p-7 text-center relative overflow-hidden">
+
+                    <!-- Watermark Crown -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none text-9xl">
+                        👑
+                    </div>
+
+                    <p class="font-royal text-[11px] sm:text-xs tracking-[0.22em] text-gold-600 uppercase">
+                        By Order of the Kingdom of Love
+                    </p>
+
+                    <h3 class="font-royal text-xl sm:text-2xl font-black text-plum-900 mt-1.5">
+                        Royal Proclamation
+                    </h3>
+
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto my-3">
+                    </div>
+
+                    <p class="font-serif italic text-base sm:text-lg text-plum-800">
+                        Be it known across all realms on this glorious occasion of<br>
+                        <strong class="font-semibold text-plum-900">National Princess Day • November 18, 2026</strong>,
+                        that
+                    </p>
+
+                    <!-- Recipient Name -->
+                    <div class="my-3">
+                        <p class="font-script text-4xl sm:text-5xl text-blush-500 drop-shadow-2xs">
+                            Darshika (“Bayko”)
+                        </p>
+                        <p class="font-royal text-xs sm:text-sm font-bold text-gold-600 tracking-wide mt-1">
+                            Her Royal Highness, Queen & Princess
+                        </p>
+                    </div>
+
+                    <p class="font-serif text-base sm:text-lg text-plum-800 leading-relaxed max-w-md mx-auto">
+                        is hereby officially crowned as the sole ruler of <span class="font-semibold text-plum-900">of
+                            her navar her Laddoo Heart</span>, entitled before you came in my life now and forever <span
+                            class="italic font-semibold text-blush-500">my little universe, with the everlasting right
+                            to be loved a little extra, spoiled endlessly, kissed on her forehead a thousand times, held
+                            close on her difficult days, and reminded every single day just how precious she is to me,
+                            Her crown shall never be too heavy, for she will always have a heart beside hers to remind
+                            her how precious she is.
+
+                            And should the entire kingdom forget how extraordinary she is, let this proclamation stand
+                            forever as a reminder:
+
+                            She is my princess, my favourite soul, my sweetest home, and the girl I would choose to make
+                            a thousand little beautiful memories with, in every lifetime I am blessed to live.</span>.
+                    </p>
+
+                    <!-- Signatures & Official Gold Seal -->
+                    <div class="mt-7 pt-4 border-t border-gold-300/60 flex items-end justify-between gap-2 text-left">
+                        <div>
+                            <p class="font-script text-2xl sm:text-3xl text-plum-900 leading-none">Forever yours, Laddoo
+                            </p>
+                            <p class="text-[10px] uppercase tracking-widest text-gold-600 font-bold mt-1">Devoted
+                                Husband Laddoo & Royal Guard</p>
+                        </div>
+
+                        <!-- Interactive Wax/Gold Stamp Button -->
+                        <button type="button" onclick="stampDecree()" id="decree-seal-btn"
+                            class="group flex flex-col items-center focus:outline-none" title="Tap to Stamp Royal Seal">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-tr from-gold-500 via-gold-300 to-gold-400 border-2 border-cream-50 shadow-gold-glow flex items-center justify-center transform group-hover:rotate-12 group-active:scale-90 transition-all">
+                                <span class="text-xl">👑</span>
+                            </div>
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-gold-600 mt-1">Official
+                                Seal</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             6. WARM HEARTFELT FOOTER SIGNED BY SAURABH
+        ========================================================== -->
+        <footer class="text-center pt-6 pb-8 space-y-3">
+            <div class="inline-flex items-center justify-center gap-2 text-gold-400 text-sm">
+                <span>✦</span>
+                <span>👑</span>
+                <span>✦</span>
+            </div>
+            <p class="font-serif italic text-lg text-plum-800 max-w-sm mx-auto px-4">
+                “Happy Princess Day once again, my love. Thank you for making my ordinary life feel like a royal fairy
+                tale.”
+            </p>
+            <p class="font-script text-3xl sm:text-4xl text-blush-500 pt-1">
+                Forever yours, Navar (Laddoo)
+            </p>
+            <p class="text-[11px] text-plum-800/60 tracking-widest uppercase">
+                November 18 • Made with all my love for Darshika My Bayko
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- =========================================================
+         LOVE LETTER MODAL (POPUP WHEN ENVELOPE IS TAPPED)
+    ========================================================== -->
+    <div id="letter-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-plum-900/50 backdrop-blur-xs transition-opacity"
+        onclick="closeEnvelope(event)">
+        <div class="relative w-full max-w-md bg-cream-50 rounded-3xl p-6 sm:p-8 border-2 border-gold-300 shadow-2xl transform transition-all scale-95 opacity-0"
+            id="letter-modal-box" onclick="event.stopPropagation()">
+            <div class="washi-tape w-24 h-5 mx-auto -mt-9 mb-4 rounded-xs"></div>
+
+            <div class="text-center space-y-1 mb-4">
+                <span id="modal-letter-tag" class="text-[11px] font-bold uppercase tracking-widest text-gold-600">Letter
+                    No. 01</span>
+                <h3 id="modal-letter-title" class="font-royal text-xl text-plum-900">When You Smile</h3>
+            </div>
+
+            <div class="bg-blush-50/50 rounded-2xl p-5 border border-gold-200/70">
+                <p id="modal-letter-body"
+                    class="font-serif italic text-lg text-plum-800 leading-relaxed whitespace-pre-line"></p>
+            </div>
+
+            <div class="mt-5 flex items-center justify-between">
+                <span class="font-script text-2xl text-blush-500">Forever yours, Laddoo</span>
+                <button type="button" onclick="closeEnvelope()"
+                    class="px-4 py-2 rounded-full bg-plum-900 hover:bg-plum-800 text-cream-50 text-xs font-semibold transition-all">
+                    Close Letter ✕
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
