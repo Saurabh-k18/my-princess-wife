@@ -5,17 +5,17 @@ const loveLetters = [
     {
         tag: "Letter No. 01",
         title: "When You Smile",
-        body: "My dearest Darshika,\n\nNo matter how busy or tiring my day gets, the second I see your smile or hear your voice, everything feels right again. You carry a softness and grace that turns ordinary moments into my favorite memories.\n\nNever stop shining, meri pyari Bayko."
+        body: "My dearest bayko,\n\nNo matter how busy or tiring my day gets, the second I see your smile or hear your voice, everything feels right again. You carry a softness and grace that turns ordinary moments into my favorite memories.\n\nNever stop shining, meri pyari Bayko."
     },
     {
         tag: "Letter No. 02",
         title: "My Safe Haven",
-        body: "To my Princess,\n\nHome isn't a place on a map for me—it's wherever you are sitting next to me, laughing over little things, or holding my hand. Thank you for being my peace, my biggest cheerleader, and my best friend every single day."
+        body: "To my Princess,\n\nHome isn't a place on a map for me it's wherever you are sitting next to me, laughing over little things, or holding my hand. Thank you for being my peace, my biggest cheerleader, and my best friend every single day."
     },
     {
         tag: "Letter No. 03",
         title: "My Promise to Bayko",
-        body: "Meri Bayko,\n\nOn National Princess Day and every day after, I promise to always protect your heart, celebrate your dreams, spoil you with your favorite treats, and remind you that you will forever be treated like royalty by me."
+        body: "Mahji Bayko,\n\nOn National Princess Day and every day after, I promise to always protect your heart, celebrate your dreams, spoil you with your favorite treats, and remind you that you will forever be treated like royalty by me."
     }
 ];
 
@@ -64,12 +64,12 @@ const reasonsDeck = [
     {
         emoji: "🌸",
         title: "Your Effortless Grace",
-        text: "“You don’t need a tiara to look royal, Darshika. The kindness in your eyes and the warmth in your voice make every room brighter.”"
+        text: "“You don’t need a tiara to look royal, Bayko. The kindness in your eyes and the warmth in your voice make every room brighter.”"
     },
     {
         emoji: "✨",
         title: "Your Pure, Caring Heart",
-        text: "“The way you care so deeply for the people you love—and the patience and magic you bring to everything you do—makes me admire you endlessly.”"
+        text: "“The way you care so deeply for the people you love and the patience and magic you bring to everything you do makes me admire you endlessly.”"
     },
     {
         emoji: "🎀",
@@ -79,7 +79,7 @@ const reasonsDeck = [
     {
         emoji: "☕",
         title: "Our Simple Little Moments",
-        text: "“Whether it's sharing a cup of chai, going on a drive, or just talking for hours, every ordinary minute with you feels royal.”"
+        text: "“Whether it's sharing a anything or, eating while on face time giving you my first bite or kiss you on screen the whole time, or just talking for hours, every ordinary minute with you feels royal.”"
     },
     {
         emoji: "💖",
@@ -141,12 +141,12 @@ function goToReasonCard(index) {
 // 3. REDEEMABLE ROYAL VOUCHERS
 // =========================================================
 const vouchers = [
-    { id: 0, icon: "🍰", title: "Royal Coffee & Dessert Date", desc: "Your favorite café, your favorite sweet treat, zero arguments.", redeemed: false },
-    { id: 1, icon: "🎬", title: "Cozy Movie & Snack Night", desc: "You pick the movie, I bring all the snacks and warm blankets.", redeemed: false },
-    { id: 2, icon: "💆‍♀️", title: "20-Min Royal Head Massage", desc: "Redeemable anytime you feel tired after a long day.", redeemed: false },
-    { id: 3, icon: "🚗", title: "Late-Night Long Drive", desc: "Windows down, your playlist on repeat, and ice cream on the way.", redeemed: false },
-    { id: 4, icon: "🍜", title: "Instant Craving Fulfilled", desc: "Whatever Bayko craves right now magically appears.", redeemed: false },
-    { id: 5, icon: "👑", title: "One 'Yes Bayko' Pass", desc: "Instant approval on any wish—no questions asked!", redeemed: false }
+    { id: 0, icon: "🍰", title: "Any Game", desc: "Your favorite Games you like.", redeemed: false },
+    { id: 1, icon: "🎬", title: "Cozy Movie", desc: "You pick the fav movies, or fav Tv shows and we will watch it.", redeemed: false },
+    { id: 2, icon: "💆‍♀️", title: "20 kisses ASAP", desc: "When you active it you will get it asap.", redeemed: false },
+    { id: 3, icon: "🚗", title: "You can eat what you want to"", desc: "Bayko you can have anything you like.", redeemed: false },
+    { id: 4, icon: "🍜", title: "You can tease me", desc: "Bayko you can tease me or make fun of me say anything to me.", redeemed: false },
+    { id: 5, icon: "👑", title: "One 'Yes Bayko' Pass", desc: "approval on any wish—no questions asked!", redeemed: false }
 ];
 
 function renderVouchers() {
